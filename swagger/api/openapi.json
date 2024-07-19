@@ -41,7 +41,10 @@
                         "name": "id",
                         "in": "path",
                         "description": "声優id",
-                        "required": true
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
