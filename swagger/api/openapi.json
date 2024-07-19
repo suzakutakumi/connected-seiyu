@@ -1,0 +1,80 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "connected seiyu API",
+        "version": "1.0.0",
+        "contact": {
+            "name": "suzaku_takumi",
+            "email": "suzakutakumi3@gmail.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080"
+        },
+        {
+            "url": "https://localhost:8080"
+        }
+    ],
+    "paths": {
+        "/seiyu/search": {
+            "get": {
+                "summary": "声優の検索",
+                "tags": [
+                    "/seiyu"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/seiyu/{id}": {
+            "get": {
+                "summary": "声優の単一取得",
+                "tags": [
+                    "/seiyu"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "声優id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "seiyu": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "01J34YA4K4SFN8D27PW0TT0T76"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "村瀬歩"
+                    },
+                    "other": {
+                        "type": "string",
+                        "example": "高い声が出るので少年役が多い(主観)"
+                    }
+                }
+            }
+        }
+    }
+}
